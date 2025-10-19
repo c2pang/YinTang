@@ -1,21 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css">
   <title>隐塘故事</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: STKaiti, sans-serif}
+    .fixed-element {
+      position: fixed; /* Footer always displayed */
+      bottom: 0;
+      right: 0;
+      width: 100%; /* Example: full width footer */
+      background-color: #f1f1f1;
+      padding: 0px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="head">
-  <h1 style="font-size:3em;">隐塘燕迹</h1>
-  <font color=#00a>网页:</font> <img src="YinTangQR.png" width=10% margin="auto" title="https://bit.ly/3DwsBtz"><br>
-  <p style="color:DarkGoldenRod">2025年4月29日更新</p>
-  <p style="font-size:0.8em;color:DarkGoldenRod;">添加【次、三支祖】，更新【基因验证】</p>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-pale-red w3-card" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button w3-wide w3-medium"><i class="fa fa-home"></i> 隐塘故事</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#前言" class="w3-bar-item w3-button">前言</a>
+      <a href="#三祖" class="w3-bar-item w3-button">三祖</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="隐塘">隐塘 <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#缘起" class="w3-bar-item w3-button">缘起</a>
+          <a href="#长支" class="w3-bar-item w3-button">长支</a>
+          <a href="#次支" class="w3-bar-item w3-button">次支</a>
+          <a href="#三支" class="w3-bar-item w3-button">三支</a>
+          <a href="#四支" class="w3-bar-item w3-button">四支</a>
+          <a href="#基因验证" class="w3-bar-item w3-button">基因验证</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button">姓氏祖先 <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#元宋海南" class="w3-bar-item w3-button">元宋•海南</a>
+          <a href="#隋朝福建" class="w3-bar-item w3-button">隋朝•福建</a>
+          <a href="#东汉大树" class="w3-bar-item w3-button">东汉•大树将军</a>
+          <a href="#春秋荥阳" class="w3-bar-item w3-button">春秋•河南荥阳</a>
+          <a href="#周朝始平" class="w3-bar-item w3-button">周朝•始平郡</a>
+        </div>
+      </div>
+      <a href="#迁徙" class="w3-bar-item w3-button">迁徙</a>
+      <a href="#后记" class="w3-bar-item w3-button">后记</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </div>
 
-<div class="container">
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16"><i class="fa fa-close"></i></a>
+  <a href="#前言" onclick="w3_close()" class="w3-bar-item w3-button">前言</a>
+  <a href="#三祖" onclick="w3_close()" class="w3-bar-item w3-button">三祖</a>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">隐塘 <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="#缘起" onclick="w3_close()" class="w3-bar-item w3-button">缘起</a>
+      <a href="#长支" onclick="w3_close()" class="w3-bar-item w3-button">长支</a>
+      <a href="#次支" onclick="w3_close()" class="w3-bar-item w3-button">次支</a>
+      <a href="#三支" onclick="w3_close()" class="w3-bar-item w3-button">三支</a>
+      <a href="#四支" onclick="w3_close()" class="w3-bar-item w3-button">四支</a>
+      <a href="#基因检测" onclick="w3_close()" class="w3-bar-item w3-button">基因检测</a>
+    </div>
+  </div>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">姓氏祖先 <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="#元宋海南" onclick="w3_close()" class="w3-bar-item w3-button">元宋海南</a>
+      <a href="#隋朝福建" onclick="w3_close()" class="w3-bar-item w3-button">隋朝福建</a>
+      <a href="#东汉大树" onclick="w3_close()" class="w3-bar-item w3-button">东汉大树</a>
+      <a href="#春秋荥阳" onclick="w3_close()" class="w3-bar-item w3-button">春秋荥阳</a>
+      <a href="#周朝始平" onclick="w3_close()" class="w3-bar-item w3-button">周朝始平</a>
+    </div>
+  </div>
+  <a href="#迁徙" onclick="w3_close()" class="w3-bar-item w3-button">迁徙</a>
+  <a href="#后记" onclick="w3_close()" class="w3-bar-item w3-button">后记</a>
+</nav>
 
+<div class="w3-container w3-center w3-pale-blue w3-padding-32">
+  <h1 class="w3-jumbo" style="text-shadow:1px 1px 0 #f00">隐塘燕迹</h1>
+  <p class="w3-large">网页:</font> <img src="YinTangQR.png" width=10% margin="auto" title="https://bit.ly/3DwsBtz"></p>
+  <p class="w3-text-red">2025年10月19日更新<br> 添加菜单栏</p>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-sand" id="前言">
 <h1>前言</h1>
   <p>从来没有想过我的祖先来自哪里。我的橱柜里有一份 1992 年家谱记录的几页复印件。它在那里放了很多年，直到2017年，我想知道我的曾祖父母是谁？开始了我的寻根历程。</p>
   <p>当我拿到1992年完整的族谱时，寻根之旅才真正开始。我原本希望从族谱中整理出祖先的故事，但未能如愿。明朝之前的历史无法无缝衔接，或许是因为我的中文能力有限。在提升语言能力的同时，我也回到海南故乡进行实地考察。对当地地名的熟悉以及墓碑上的文字给了我不少线索，但仍未能完全解开我心中的疑惑。于是，我决定借助基因技术来填补明朝之前甚至更早的历史空白。</p>
@@ -24,7 +103,9 @@
     <img src="DNA_Inheritance.png" style="width:90%">
     <figcaption>【图一】Y染色体基因突变的代际传递</figcaption>
   </figure>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="三祖">
   <h2>三种祖先</h2>
     <p>我寻祖的方针是从三个层面着手，即文化祖先、姓氏祖先、基因祖先。
       <ul>
@@ -42,7 +123,9 @@
       <li>约1万年前的地球正处于气候变暖、冰川退缩和海平面上升的时期。这一时期的环境变化为人类从狩猎采集向农业社会的过渡提供了条件，标志着人类文明发展的重要转折点。农业革命改变了人类，从狩猎采集转向农业，形成定居社会。
       <li>约5000年前至今，文明发展，文字、城市、国家和复杂社会结构的出现，推动科技和文化进步。
     </ul>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-sand" id="缘起">
 <h1>明朝•隐塘的缘起</h1>
   <h2>隐塘始祖</h2>
     <p>明•景泰1454年，八世祖冯元佑在万泉河口博鳌当汛守，遂家於此，生四男。长子文俊肇基汀洲，次子文昌肇基培兰村，三子文盛迁居沙美村，四子文成留在隐塘。</p>
@@ -56,11 +139,15 @@
       <img alt="宗祠赞" src="ZongCiZan.png" style="width:50%">
       <figcaption>【图三】隐塘七言宗祠赞</figcaption>
     </figure>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="长支">
   <h2>长支祖</h2>
     <p style="text-align:right;color:OrangeRed">基因/血缘祖先</p>
     <p>文俊公与其弟在隐塘鼎新祖庙一座，坐酉向卯。主修上代谱系后迁居汀州。文俊公有四位曾孙：孔宽、孔盛、孔兴、孔臭。
     <ul>
       <li>孔兴支系
+        <ul class="w3-pale-red"><li>曾孙辈：有会的儿子天禄(亦名天桂)（移居横岭村,有待验证）</ul>
         <ul><li>曾孙辈：有宣（移居沙美村）</ul>
       <li>孔臭支系<br>
           生三子：宗泰、宗清、宗源。
@@ -79,6 +166,9 @@
                 <li>次子一凤 → 留居汀州</ul>
       </ul>
     </ul>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-sand" id="次支">
   <h2>次支祖</h2>
     <p style="text-align:right;color:OrangeRed">基因/血缘祖先</p>
     <p>文昌公的后裔主要定居在培兰村。文昌公的儿子冯补曾任八品修职郎，其孙冯修被授予千户之职。冯修有两位曾孙：汝元和汝隆。</p>
@@ -93,23 +183,38 @@
         <li>三子高明的后裔分迁南港村与和顺村；
         <li>四子高才的后裔移居加昌村。</ul>
     </ul>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="三支">
   <h2>三支祖</h2>
     <p style="text-align:right;color:OrangeRed">基因/血缘祖先</p>
     <p>文盛公的后裔主要定居在沙美村，少数移居至北山、烟墩、万州。文盛公的玄孙冯先育有二子裔德和明德。</p>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-sand" id="四支">
   <h2>四支祖</h2>
     <p style="text-align:right;color:OrangeRed">基因/血缘祖先</p>
     <p>文成公的后裔主要留在隐塘村，大多分居在清调村与附近的村庄，少数移居至万州、乌坡、龙滚、阳江等地。</p>
-    <p>文成公有三位曾孙：德全、德明、德贤。德全生世豪、世亮两子。世豪的长子廷侯迁居清调村，次子廷宰留居隐塘。世豪公的墓是现存最古老的祖墓，曾从大灵岭迁至后埇尾岭，最终迁至现在的公墓。德明的孙子廷仁移居博鳌，德贤的孙子廷佐则迁至竹史箩村。</p>
+    <p>文成公有三位曾孙：德全、德明、德贤。德全生世豪、世亮两子。世豪的长子廷侯迁居清调村，次子廷宰留居隐塘。</p>
+    <p class="w3-pale-red">廷宰嫡长孙联章的后裔移居万州，很多都葬在万宁宝塘。宝塘村西南边200米处有个冯家村，找个时间去考察，希望能找回失联的宗亲。</p>
+    <p>世豪公的墓是现存最古老的祖墓，曾从大灵岭迁至后埇尾岭，最终迁至现在的公墓。德明的孙子廷仁移居博鳌，德贤的孙子廷佐则迁至竹史箩村。</p>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="基因验证">
   <h2>基因验证</h2>
     <p>为了消除对基因检测的疑虑，2023年，我和增贵在中国做了基因检测。结果显示，我们有一位共同祖先生活在1434年左右，这与族谱中有明确出生年份记载的元佑公非常接近，误差仅19年。</p>
     <p>2025年6月起，我们开始利用基因检测技术，为族谱中‘失叙名录’（失考支系）的宗亲确认祖脉来源。</p>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-sand" id="元宋海南">
 <h1>元朝•冯周旺</h1>
   <p>四世祖冯周旺在元朝时，由琼来乐邑。因文场不遂，武闱标名，官任乐汛，遂肇基於乐土。</p>
 
 <h1>宋朝•冯细歌</h1>
   <p>二世祖冯细歌在宋朝时，因官任琼府而从福建莆田迁居海南琼山之墩头村。</p>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="隋朝福建">
 <h1>隋朝•福建祖</h1>
   <p style="text-align:right;color:OrangeRed">基因/血缘祖先</p>
   <p>福建祖在隋•开皇(584年)时从莆田分四支:</p>
@@ -120,7 +225,9 @@
     <li>4支，明朝时北迁到辽宁
   </ul>
   <p>根据基因资料，春秋时期(前635年)以来，我族基因检测的人数不多，到2025年为止只有31人，而且都分布在中国的沿海城市，从海南到黑龙江。</p>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-sand" id="东汉大树">
 <h1>东汉•大树将军</h1>
   <p style="text-align:right;color:ForestGreen">姓氏祖先</p>
   <ul>
@@ -140,7 +247,9 @@
         <li>『始平开玉叶；大树发金枝』
       </ul>
   </ul>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-sand" id="春秋荥阳">
 <h1>春秋战国•河南荥阳冯城</h1>
   <p style="text-align:right;color:ForestGreen">姓氏祖先</p>
   <p>冯氏最初发祥于河南省荥阳(XíngYáng)，以下有几种说法：</p>
@@ -163,7 +272,9 @@
       </ul>
     <li>前403年周威烈王再封毕万的支孙冯文孙于冯城 
   </ul>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="周朝始平">
 <h1>周朝•始平郡</h1>
   <p style="text-align:right;color:DodgerBlue">文化祖先</p>
   <p>冯氏的先祖从姬姓开始。周文王(西伯侯，姬昌，约前1152年 ~ 前1056年)第十五子(庶子)毕公高封地在毕，故子孫以毕为姓。 西周时，毕公高后裔毕万在晋为大夫，当时晋献公将其地分封给有功之臣，毕万被封于魏(今山西芮城县附近)。</p>
@@ -178,6 +289,9 @@
       <dd>始平郡，中国西晋(266~316年)时设置的郡。治所在槐里县 (今陕西省兴平市东南5公里南佐村)。
       <dd> &nbsp
   </dl>
+</div>
+
+<div class="w3-padding w3-padding-32 w3-sand" id="迁徙">
 <h1>祖先迁徙路径</h1>
   <dl>
     <dt>新加坡冯氏祖先迁徙图
@@ -193,15 +307,40 @@
       <dd>2025年3月10日版地图，添加上党冯氏
       <dd>2025年4月18日版地图，添加河南省南阳市邓州市罗庄镇
   </dl>
+</div>
 
+<div class="w3-padding w3-padding-32 w3-pale-yellow" id="后记">
 <h1>后记</h1>
   <p>在查阅1992年编撰的《原谱失叙综合本》时，发现因年代久远、支系散居，有十四支宗亲失去联络而被列入失叙名录。如今基因技术已能精准识别血缘亲疏并推算共祖年代，我希望能借助科技之力，帮助这些失散多年的宗亲重归祖脉。愿这份寻根溯祖的精神，能够薪火相传，生生不息。</p>
-
-</div><br><br>
-
-<div class="foot">
-  <p>© 2025 正向 c2pang. All rights reserved.</p>
 </div>
+
+<hr class="w3-border-red">
+<p class="w3-center">=== 结束 ===</p>
+<hr class="w3-border-red"><br><br><br>
+
+<footer class="w3-container w3-center w3-khaki fixed-element">
+  <p>© 2025 正向 c2pang. All rights reserved.<br>
+     Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-red">w3.css</a></p>
+</footer>
+
+<script>
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
+
