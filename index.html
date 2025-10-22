@@ -22,7 +22,7 @@
     <div class="w3-left w3-hide-small">
       <a href="#前言" class="w3-bar-item w3-button">前言</a>
       <a href="#三祖" class="w3-bar-item w3-button">三祖</a>
-      <div class="w3-dropdown-hover w3-hide-small">
+      <div class="w3-dropdown-hover">
         <button class="w3-button" title="隐塘">隐塘 <i class="fa fa-caret-down"></i></button>     
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
           <a href="#缘起" class="w3-bar-item w3-button">缘起</a>
@@ -33,17 +33,22 @@
           <a href="#基因验证" class="w3-bar-item w3-button">基因验证</a>
         </div>
       </div>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-button">姓氏祖先 <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-hover">
+        <button class="w3-button" title="姓氏祖先">姓氏祖先 <i class="fa fa-caret-down"></i></button>     
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
           <a href="#元宋海南" class="w3-bar-item w3-button">元宋•海南</a>
           <a href="#隋朝福建" class="w3-bar-item w3-button">隋朝•福建</a>
           <a href="#东汉大树" class="w3-bar-item w3-button">东汉•大树将军</a>
           <a href="#春秋荥阳" class="w3-bar-item w3-button">春秋•河南荥阳</a>
-          <a href="#周朝始平" class="w3-bar-item w3-button">周朝•始平郡</a>
         </div>
       </div>
-      <a href="#大汶口" class="w3-bar-item w3-button">大汶口文化</a>
+      <div class="w3-dropdown-hover">
+        <button class="w3-button" title="文化祖先">文化祖先 <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#周朝始平" class="w3-bar-item w3-button">周朝•始平郡</a>
+          <a href="#大汶口" class="w3-bar-item w3-button">大汶口文化</a>
+        </div>
+      </div>
       <a href="#迁徙" class="w3-bar-item w3-button">迁徙</a>
       <a href="#后记" class="w3-bar-item w3-button">后记</a>
     </div>
@@ -55,7 +60,7 @@
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+<nav class="w3-sidebar w3-bar-block w3-light-green w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16"><i class="fa fa-close"></i></a>
   <a href="#前言" onclick="w3_close()" class="w3-bar-item w3-button">前言</a>
   <a href="#三祖" onclick="w3_close()" class="w3-bar-item w3-button">三祖</a>
@@ -77,10 +82,15 @@
       <a href="#隋朝福建" onclick="w3_close()" class="w3-bar-item w3-button">隋朝福建</a>
       <a href="#东汉大树" onclick="w3_close()" class="w3-bar-item w3-button">东汉大树</a>
       <a href="#春秋荥阳" onclick="w3_close()" class="w3-bar-item w3-button">春秋荥阳</a>
-      <a href="#周朝始平" onclick="w3_close()" class="w3-bar-item w3-button">周朝始平</a>
     </div>
   </div>
-  <a href="#大汶口" onclick="w3_close()" class="w3-bar-item w3-button">大汶口文化</a>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">文化祖先 <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="#周朝始平" onclick="w3_close()" class="w3-bar-item w3-button">周朝始平</a>
+      <a href="#大汶口" onclick="w3_close()" class="w3-bar-item w3-button">大汶口文化</a>
+    </div>
+  </div>
   <a href="#迁徙" onclick="w3_close()" class="w3-bar-item w3-button">迁徙</a>
   <a href="#后记" onclick="w3_close()" class="w3-bar-item w3-button">后记</a>
 </nav>
@@ -90,7 +100,7 @@
 <div class="w3-container w3-center w3-pale-blue w3-padding-32">
   <h1 class="w3-jumbo" style="text-shadow:1px 1px 0 #f00">隐塘燕迹</h1>
   <p class="w3-large">网页:</font> <img src="YinTangQR.png" style="max-width:75px" margin="auto" title="https://bit.ly/3DwsBtz"></p>
-  <p class="w3-text-red">2025年10月22日更新<br>添加<br>23魔方祖先分布图、大汶口文化、古DNA验证<br>启动基因宗亲探寻祖脉的计划</p>
+  <p class="w3-text-red">2025年10月22日更新<br>添加<br>23魔方祖先分布图、大汶口文化、古DNA验证<br>启动基因寻祖计划</p>
 </div>
 
 <div class="w3-container w3-padding-32 w3-sand" id="前言" style="overflow:hidden">
@@ -296,7 +306,7 @@
   </dl>
 </div>
 
-<div class="w3-container w3-pale-yellow" id="大汶口文化">
+<div class="w3-container w3-pale-yellow" id="大汶口">
   <h1>大汶口文化</h1>
   <p>存在于前3500年至前2500年。主要分布在山东省泰山附近地区，南至江苏北部地区。</p>
   <p>大汶口文化<span class="w3-superscript"><a href="#R03">[3]</a></span>与南岛民族存在关连。隐塘宗亲与南岛人(O-AM01847)的共同祖先(O-AM01856)在一万五千年前。推测南岛人可能在大约8千年前从中国东南沿海外迁。</p>
